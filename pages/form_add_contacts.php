@@ -8,7 +8,7 @@
 	</div>
 	
 	<div class="control-group">
-		<label class="control-label" for="inputFirstName">Last Name</label>
+		<label class="control-label" for="inputLastName">Last Name</label>
 		<div class="controls">
 		<?php echo input('input_last_name','required')?>
 		</div>
