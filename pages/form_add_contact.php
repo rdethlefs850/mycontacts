@@ -3,28 +3,28 @@
 	<div class="control-group">
 		<label class="control-label" for="inputFistName">First Name</label>
 		<div class="controls">
-		<?php echo input('input_first_name','required')?>
+		<?php echo input('contact_firstname','required')?>
 		</div>
 	</div>
 	
 	<div class="control-group">
 		<label class="control-label" for="inputLastName">Last Name</label>
 		<div class="controls">
-		<?php echo input('input_last_name','required')?>
+		<?php echo input('contact_lastname','required')?>
 		</div>
 	</div>
 
 	<div class="control-group">
 		<label class="control-label" for="inputEmail">Email</label>
 		<div class="controls">
-		<?php echo input('input_email','required')?>
+		<?php echo input('contact_email','required')?>
 		</div>
 	</div>
 
 	<div class="control-group">
 		<label class="control-label" for="inputPhone">Phone #</label>
 		<div class="controls">
-		<?php echo input('input_phone','required')?>
+		<?php echo input('contact_phone','required')?>
 		</div>
 	</div>
 
