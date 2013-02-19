@@ -24,13 +24,16 @@
 				<td><?php echo $contact_firstname ?> <?php echo $contact_lastname?></td>
 				<td><a href="mailto"><?php echo $contact_email ?></a></td>
 				<td><?php echo format_phone($contact_phone) ?></td>
+				<td><?php
+						echo "<a href=\"actions/edit_contact.php&id\" class=\"btn btn-warning\"><i class=\"icon-edit icon-white\"></i></a>
+							  <a class=\"btn btn-danger\"><i class=\"icon-trash icon-white\"></i>"; ?>
+					</td>
 			</tr>
 			
 		<?php }
 
 		//Close DB connection
 		$conn->close();
-
 		 
 ?>
 	</tbody>
