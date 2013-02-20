@@ -1,4 +1,16 @@
-<h2>Contacts</h2>
+<?php 
+//Fetch the name of the group with the id that is not the the QS
+extract($_GET);
+
+//Connect to DB
+$conn = new mysqli(DB_HOST,DB_USER,DB_PASS,DB_NAME);
+$sql = "SELECT group_name FROM contacts WHERE group_id=$id ORDER BY contact_firstname, contact_lastname, contact_email, contact_phone";
+$results = $conn->query($sql);
+$group = $results->fetch_assoc();
+
+?>
+
+<h2><?php echo $group['group_name'] ?></h2>
 <table class="table">
 	<thead>
 		<tr>
@@ -9,11 +21,10 @@
 	</thead>
 	<tbody>
 		<?php 
-		//Connect to DB
-		$conn = new mysqli(DB_HOST,DB_USER,DB_PASS,DB_NAME);
+		
 
 		//Query DB
-		$sql = 'SELECT * FROM contacts ORDER BY contact_lastname, contact_firstname';
+		$sql = "SELECT * FROM contacts ORDER BY contact_lastname, contact_firstname";
 		$results = $conn->query($sql);
 
 		//Loop over result set, displaying contacts

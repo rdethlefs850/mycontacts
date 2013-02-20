@@ -21,3 +21,8 @@ header h1 {
 header h2 {
 	font-size:22px;
 }
+
+.form-inline {
+	display:inline-block;
+	margin-bottom:0px;
+}
