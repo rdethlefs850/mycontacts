@@ -71,7 +71,10 @@ foreach($required as $r) {
 		//Kill script
 		die();
 	}
+
 }
+
+
 
 //Redirect header
 header('Location:../?p=list_contacts');

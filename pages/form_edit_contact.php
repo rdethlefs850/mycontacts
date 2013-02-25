@@ -35,9 +35,7 @@ $conn->close();
 	<div class="control-group">
 		<label class="control-label" for="contact_phone1">Phone</label>
 		<div class="controls">
-			( <?php echo input('contact_phone1','999',$contact_phone1,'phone span1') ?> ) 
-			<?php echo input('contact_phone2','888',$contact_phone2,'phone span1') ?>-
-			<?php echo input('contact_phone3','7777',$contact_phone3,'phone span2') ?>
+			<?php echo input('contact_phone','4025555555',$contact_phone,'phone span')?>
 		</div>
 	</div>
 	<div class="form-actions">

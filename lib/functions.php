@@ -3,6 +3,8 @@ function format_phone($phone) {
 	return $phone = '('.substr($phone,0,3).')' .substr($phone,3,3).'-'.substr($phone,-4);
 }
 
+
+
 /**
  * Outputs an input element with the given attribute values
  * This function also examines Session data for previously entered values with same name

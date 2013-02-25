@@ -24,7 +24,7 @@ $conn->close();
 
 // Redirect with a message
 $_SESSION['message'] = array(
-	'type' => 'warning',
+	'type' => 'danger',
 	'text' => 'Your contact was deleted'
 );
 header('Location:../?p=list_contacts');
