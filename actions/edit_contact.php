@@ -35,7 +35,7 @@ foreach($required as $r) {
 $conn = new mysqli(DB_HOST,DB_USER,DB_PASS,DB_NAME);
 
 // Execute UPDATE
-$sql = "UPDATE contacts SET contact_firstname='$contact_firstname',contact_lastname='$contact_lastname',contact_email='$contact_email',contact_phone=$contact_phone,group_id=$group_id WHERE contact_id=$contact_id";
+$sql = "UPDATE contacts SET contact_firstname='$contact_firstname',contact_lastname='$contact_lastname',contact_email='$contact_email',contact_phone=$contact_phone,group_id='$group_id' WHERE contact_id=$contact_id";
 $conn->query($sql);
 
 if($conn->errno > 0) {
@@ -54,3 +54,11 @@ if($conn->errno > 0) {
 			'text' => "$contact_firstname $contact_lastname was updated."
 	);
 	header('Location:../?p=list_contacts');
+	
+	
+
+	
+	
+	
+	
+	

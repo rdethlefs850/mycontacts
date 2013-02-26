@@ -74,6 +74,36 @@ function radio($name, $options) {
 	}
 }
 
+function get_options($table,$default_value=0,$default_name='Select') {
+	$options = array($default_value => $default_name);
+	
+	//Field names
+	$id_field = $table.'_id';
+	$name_field = $table.'_name';
+	
+	//Connect to DB
+	$conn = new mysqli(DB_HOST,DB_USER,DB_PASS,DB_NAME);
+	
+	//Query table for id's and names
+	$sql = "SELECT $id_field, $name_field FROM {$table}s ORDER BY $name_field";
+	$results = $conn->query($sql);
+	
+	//Loop over result set, adding in all rows to $options
+	while(($row = $results->fetch_assoc()) !=null) {
+		$key = $row[$id_field];
+		$value = $row[$name_field];
+		$options[$key] = $value;
+	}
+	
+	//Close the DB connections
+	$conn->close();
+	
+	//Return options
+	return $options;
+	
+	
+}
+
 
 
 

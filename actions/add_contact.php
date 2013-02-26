@@ -80,4 +80,6 @@ foreach($required as $r) {
 header('Location:../?p=list_contacts');
 
 
+unset($_SESSION['POST'])?>
+
 

@@ -32,22 +32,7 @@
 		<label class="control-label" for="contact_id">Group</label>
 		<div class="controls">
 		<?php 
-		//Connect to DB
-		$conn = new mysqli(DB_HOST,DB_USER,DB_PASS,DB_NAME);
-		
-		//Query groups table
-		$sql = 'SELECT * FROM groups ORDER BY group_name';
-		$results = $conn->query($sql);
-		
-		//Loop over result set
-		$options[0] = 'Select a group';
-		while(($group = $results->fetch_assoc()) != null) {
-			extract($group);
-			$options[$group_id] = $group_name;
-		}
-		
-		//Close DB connection
-		$conn->close();
+		$options = get_options('group',0,'Select a group');
 		
 		echo dropdown('group_id',$options);
 		?>
