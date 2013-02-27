@@ -26,3 +26,7 @@ header h2 {
 	display:inline-block;
 	margin-bottom:0px;
 }
+
+.nav-pills li span.badge {
+	margin:6px 8px 0px 0px;
+}
