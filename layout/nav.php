@@ -16,5 +16,12 @@
 				<?php endif ?>
 			<?php endforeach ?>
 		</ul>
+		<form method="get" class="form-inline pull-right">
+		<input type="hidden" name="p" value="list_contacts" />
+			<div class="input-append">
+				<input type="text" name="q" />
+				<button type="submit"><i class="icon-search"></I></button>
+			</div>
+		</form>
 	</div>
 </div>

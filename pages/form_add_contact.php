@@ -29,10 +29,10 @@
 	</div>
 	
 	<div class="control-group">
-		<label class="control-label" for="contact_id">Group</label>
+		<label class="control-label" for="group_id">Group</label>
 		<div class="controls">
 		<?php 
-		$options = get_options('group',0,'Select a group');
+		$options = get_options('group',0,'Select a group-');
 		
 		echo dropdown('group_id',$options);
 		?>
