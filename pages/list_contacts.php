@@ -3,8 +3,11 @@
 if(isset($_GET['q']) && $_GET['q'] != '') {
 	extract($_GET);
 	$where = "WHERE contact_lastname LIKE '%$q%' OR contact_firstname LIKE '%$q%'";
+	$search_message = "<p>Contacts with the last name containing <strong>{$_GET['q']}</strong></p>";
+	echo $search_message;
 } else {
 	$where = '';
+	$search_message = '';
 }
 ?>
 
@@ -16,6 +19,8 @@ if(isset($_GET['q']) && $_GET['q'] != '') {
 			<th>Name</th>
 			<th>Email</th>
 			<th>Phone</th>
+			<th>Group</th>
+			<th>Edit / Delete</th>
 		</tr>
 	</thead>
 	<tbody>
