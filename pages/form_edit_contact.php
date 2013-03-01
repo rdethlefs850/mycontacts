@@ -37,23 +37,23 @@ $conn->close();
 		<div class="controls">
 			<?php echo input('contact_phone','4025555555',$contact_phone,'phone span')?>
 		</div>
+	</div>	
+	<div class="control-group">
+		<label class="control-label" for="group_id">Group</label>
+		<div class="controls">
+		<?php 
+		$options = get_options('group',0,'Select a group-');
+		
+		echo dropdown('group_id',$options);
+		?>
+		</div>
 	</div>
+	
 	<div class="form-actions">
 		<button type="submit" class="btn btn-warning"><i class="icon-edit icon-white"></i> Update</button>
-		<button type="button" class="btn">Cancel</button>
+		<button type="button" class="btn" onclick= "window.history.go(-1)">Cancel</button>
 	</div>
 </form>
-
-
-
-
-
-
-
-
-
-
-
 
 
 

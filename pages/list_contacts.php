@@ -9,6 +9,7 @@ if(isset($_GET['q']) && $_GET['q'] != '') {
 	$where = '';
 	$search_message = '';
 }
+
 ?>
 
 
