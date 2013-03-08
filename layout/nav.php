@@ -1,27 +1,26 @@
+<?php 
+//Store the 'p' parameter from the QS into a variable
+if(isset($_GET['p'])) {
+	$p = $_GET['p'];
+} else {
+	$p = 'list_cars';
+}
+
+if($p == 'list_cars') {
+	$list_class = 'active';
+	$form_add_class = '';
+} else {
+	$list_class = '';
+	$form_add_class = 'active';
+}
+?>
+
 <div class="navbar">
 	<div class="navbar-inner">
-		<a class="brand" href="./">MyContacts</a>	
+		<a class="brand" href="./">My Cars</a>	
 		<ul class="nav">
-			<?php foreach($pages as $file => $text) : ?>
-				<?php if(is_array($text)):?>
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $file ?></a>
-						<ul class="dropdown-menu">
-						<?php foreach($text as $page => $name):?>
-							<li><a href="./?p=<?php echo $page ?>"><?php echo $name ?></a></li>
-						<?php endforeach ?>
-						</ul>
-				<?php else:?>
-					<li><a href="./?p=<?php echo $file ?>"><?php echo $text ?></a></li>
-				<?php endif ?>
-			<?php endforeach ?>
+			<li class="<?php echo $list_class ?>"><a href="./?p=list_cars">Teams</a></li>
+			<li class="<?php echo $form_add_class ?>"><a href="./?p=form_add_car">Add Car</a></li>
 		</ul>
-		<form method="get" class="form-inline pull-right">
-		<input type="hidden" name="p" value="list_contacts" />
-			<div class="input-append">
-				<input type="text" name="q" />
-				<button type="submit"><i class="icon-search"></I></button>
-			</div>
-		</form>
 	</div>
 </div>

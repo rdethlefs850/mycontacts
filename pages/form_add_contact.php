@@ -45,14 +45,3 @@
 	</div>
 </form>
 
-
-
-
-
-
-
-
-
-<!-- FORM SUBMISSION METHODS
-Get: use when something won't result in a change to the server state
-Post: use when submitting WILL result in a change in server state -->
