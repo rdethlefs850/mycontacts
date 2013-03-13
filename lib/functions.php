@@ -7,6 +7,10 @@
  * @return HTML input element
  */
 
+function format_phone($phone) {
+	return '<a href="tel:'.$phone.'">('.substr($phone,0,3).')'.substr($phone,3,3).'-'.substr($phone,-4).'</a>';
+}
+
 function input($name, $placeholder, $value=null) {
 	if($value == null && isset($_SESSION['POST'][$name])) {
 		$value = $_SESSION['POST'][$name];
@@ -51,6 +55,34 @@ function dropdown($name, $options) {
 	}
 	$select .= "</select>";
 	return $select;
+}
+
+function get_options($table, $default_value=0,$default_name='Select') {
+	$options = array($default_value => $default_name);
+
+	// Field names
+	$id_field = $table.'_id';
+	$name_field = $table.'_name';
+
+	// Connect to DB
+	$conn = new mysqli(DB_HOST,DB_USER,DB_PASS,DB_NAME);
+
+	// Query table for id's and names
+	$sql = "SELECT $id_field, $name_field FROM {$table}s ORDER BY $name_field";
+	$results = $conn->query($sql);
+
+	// Loop over result set, adding all rows to $options
+	while (($row = $results->fetch_assoc()) != null) {
+		$key = $row[$id_field];
+		$value = $row[$name_field];
+		$options[$key] = $value;
+	}
+
+	// Close DB connection
+	$conn->close();
+
+	// Return options
+	return $options;
 }
 
 function radio($name, $options) {
